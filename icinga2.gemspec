@@ -29,7 +29,9 @@ Gem::Specification.new do |s|
 
   begin
 
-    if( RUBY_VERSION >= '2.0' )
+    if( RUBY_VERSION >= '3.0' )
+      s.required_ruby_version = '~> 3.0'
+    elsif( RUBY_VERSION >= '2.0' )
       s.required_ruby_version = '~> 2.0'
     elsif( RUBY_VERSION <= '2.1' )
       s.required_ruby_version = '~> 2.1'
