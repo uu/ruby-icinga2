@@ -43,7 +43,6 @@ Gem::Specification.new do |s|
 
     s.add_dependency('ruby_dig', '~> 0') if  RUBY_VERSION < '2.3'
 
-    s.add_dependency('openssl', '~> 2.0') if  RUBY_VERSION >= '2.3'
   rescue => e
     warn "#{$PROGRAM_NAME}: #{e}"
     exit!
