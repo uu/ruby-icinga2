@@ -150,7 +150,7 @@ module Icinga2
 
       if( node_name.nil? )
         begin
-          node_name = Addrinfo.getaddrinfo(Socket.gethostname).first
+          node_name = Addrinfo.getaddrinfo(Socket.gethostname, 80).first
           logger.debug(format('node name: %s', node_name))
         rescue SocketError => e
           raise format("can't resolve hostname (%s)", e)
