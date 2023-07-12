@@ -27,7 +27,7 @@ module Icinga2
       options = validate( params, required: true, var: 'options', type: Hash ).deep_symbolize_keys
       payload = validate( params, required: false, var: 'payload', type: Hash )
 
-      rest_client = RestClient::Resource.new( URI.encode( url ), options )
+      rest_client = RestClient::Resource.new( Addressable::URI.unencode_component( url ), options )
 
       headers['X-HTTP-Method-Override'] = 'GET'
       method = 'GET'
@@ -105,7 +105,7 @@ module Icinga2
       options = validate( params, required: true, var: 'options', type: Hash ).deep_symbolize_keys
       payload = validate( params, required: false, var: 'payload', type: Hash )
 
-      rest_client = RestClient::Resource.new( URI.encode( url ), options )
+      rest_client = RestClient::Resource.new( Addressable::URI.unencode_component( url ), options )
 
       headers['X-HTTP-Method-Override'] = 'POST'
 
@@ -165,7 +165,7 @@ module Icinga2
       options = validate( params, required: true, var: 'options', type: Hash ).deep_symbolize_keys
       payload = validate( params, required: false, var: 'payload', type: Hash )
 
-      rest_client = RestClient::Resource.new( URI.encode( url ), options )
+      rest_client = RestClient::Resource.new( Addressable::URI.unencode_component( url ), options )
 
       headers['X-HTTP-Method-Override'] = 'PUT'
 
@@ -209,7 +209,7 @@ module Icinga2
       headers = validate( params, required: true, var: 'headers', type: Hash )
       options = validate( params, required: true, var: 'options', type: Hash ).deep_symbolize_keys
 
-      rest_client = RestClient::Resource.new( URI.encode( url ), options )
+      rest_client = RestClient::Resource.new( Addressable::URI.unencode_component( url ), options )
 
       headers['X-HTTP-Method-Override'] = 'DELETE'
 
@@ -254,7 +254,7 @@ module Icinga2
       headers = validate( params, required: true, var: 'headers', type: Hash )
       options = validate( params, required: true, var: 'options', type: Hash ).deep_symbolize_keys
 
-      rest_client = RestClient::Resource.new( URI.encode( url ), options )
+      rest_client = RestClient::Resource.new( Addressable::URI.unencode_component( url ), options )
 
       begin
         data = request( rest_client, 'GET', headers )

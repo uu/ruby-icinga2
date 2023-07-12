@@ -31,6 +31,10 @@ Gem::Specification.new do |s|
 
     if( RUBY_VERSION >= '3.0' )
       s.required_ruby_version = '~> 3.0'
+    elsif( RUBY_VERSION >= '3.1' )
+      s.required_ruby_version = '~> 3.1'
+    elsif( RUBY_VERSION >= '3.2' )
+      s.required_ruby_version = '~> 3.2'
     elsif( RUBY_VERSION >= '2.0' )
       s.required_ruby_version = '~> 2.0'
     elsif( RUBY_VERSION <= '2.1' )
@@ -50,6 +54,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency('json', '~> 2.1')
   s.add_dependency('rest-client', '~> 2.0')
+  s.add_dependency('addressable', '~> 2.8.4')
 
   s.add_development_dependency('rake', '~> 0')
   s.add_development_dependency('rake-notes', '~> 0')
